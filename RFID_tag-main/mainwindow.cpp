@@ -181,11 +181,14 @@ void MainWindow::on_send_clicked()
     QByteArray bytes1 = QByteArray::fromHex(RFID.toLocal8Bit());
     uint test;
     test = CRC(bytes1,6);
-    QByteArray x;
+    QString crcdata;
+    crcdata = test;
+    bytes1.append(QByteArray::fromHex(crcdata.toLocal8Bit()));
+
    // x.append(test>>8);
     //x.append(test);
 
-    qDebug()<<"Hex convert"<<(x);
+
    // bytes1.append(x.toHex());
     qDebug()<<"crc = "<<test;
     qDebug()<<"giden data  = "<<bytes1;
