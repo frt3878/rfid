@@ -42,7 +42,7 @@ private slots:
 private:
     void serialRead();
     void serialReadyRead();
-    uint CRC(QByteArray buf, int len);
+    uint16_t CRC(QByteArray buf, int len);
     Ui::MainWindow *ui;
     QByteArray serialBuffer;
 
