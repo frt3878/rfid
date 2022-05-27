@@ -7,30 +7,40 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>426</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(52, 101, 164);</string>
+   <string notr="true">background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0.100962 rgba(34, 166, 178, 255),stop:0.543269 rgba(132, 213, 51, 255),stop:1 rgba(208, 255, 163, 255));
+	color: #ffffff;
+	font-weight: bold;
+	border-color: #051a39;
+	selection-background-color: #3b7e48;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>20</y>
+      <x>450</x>
+      <y>230</y>
       <width>241</width>
-      <height>391</height>
+      <height>171</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QPushButton" name="add">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(186, 189, 182);</string>
+        <string notr="true">background-color: #20afe7;
+	color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 11px;
+	border-color: #2082ff;
+	padding: 5px;</string>
        </property>
        <property name="text">
         <string>Add RDIF Tag</string>
@@ -40,7 +50,13 @@
      <item>
       <widget class="QPushButton" name="remove">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(186, 189, 182);</string>
+        <string notr="true">background-color: #20afe7;
+	color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 11px;
+	border-color: #2082ff;
+	padding: 5px;</string>
        </property>
        <property name="text">
         <string>Remove RFID Tag</string>
@@ -50,7 +66,13 @@
      <item>
       <widget class="QPushButton" name="allremove">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(186, 189, 182);</string>
+        <string notr="true">background-color: #20afe7;
+	color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 11px;
+	border-color: #2082ff;
+	padding: 5px;</string>
        </property>
        <property name="text">
         <string>Remove All Tags</string>
@@ -59,27 +81,11 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="send">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>380</y>
-      <width>211</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(186, 189, 182);</string>
-    </property>
-    <property name="text">
-     <string>Send</string>
-    </property>
-   </widget>
    <widget class="QTextEdit" name="rfiddata">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>280</y>
+      <x>10</x>
+      <y>270</y>
       <width>431</width>
       <height>70</height>
      </rect>
@@ -94,6 +100,9 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
    </widget>
    <widget class="QPushButton" name="update">
     <property name="geometry">
@@ -105,7 +114,13 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(186, 189, 182);</string>
+     <string notr="true">background-color: #20afe7;
+	color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 11px;
+	border-color: #2082ff;
+	padding: 5px;</string>
     </property>
     <property name="text">
      <string>Update</string>
@@ -121,7 +136,13 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(186, 189, 182);</string>
+     <string notr="true">background-color: #20afe7;
+	color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 11px;
+	border-color: #2082ff;
+	padding: 5px;</string>
     </property>
     <property name="text">
      <string>Connect</string>
@@ -150,10 +171,72 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(186, 189, 182);</string>
+     <string notr="true">background-color: #20afe7;
+	color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 11px;
+	border-color: #2082ff;
+	padding: 5px;</string>
     </property>
     <property name="text">
      <string>Disconnect</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>0</y>
+      <width>101</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/new/prefix1/Logos/logo_mobil-1.png);
+border : 0px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>0</y>
+      <width>81</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/new/prefix1/Logos/rfid.png);
+border : 0px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="status">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>170</y>
+      <width>221</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>STATUS:</string>
     </property>
    </widget>
   </widget>
