@@ -192,8 +192,43 @@ void MainWindow::serialWrite(QByteArray message)
         qDebug()<<"Gelen data orjinal: "<<serialBuffer.toHex();
 
 
+
+
     }
     if( serialBuffer.length() == 4 ){
+       if(serialBuffer.at(0) == 0x01)
+       {
+       qDebug("Function add ");
+       if(serialBuffer.at(1) == 0x01){
+       qDebug("add rfid succes ");
+       }
+       else{
+           qDebug("add rfid false ");
+       }
+
+       }
+       if(serialBuffer.at(0) == 0x02)
+       {
+       qDebug("Function remove ");
+       if(serialBuffer.at(1) == 0x01){
+       qDebug("remove rfid succes ");
+       }
+       else{
+           qDebug("remove rfid false ");
+       }
+
+       }
+       if(serialBuffer.at(0) == 0x03)
+       {
+       qDebug("Function delete all ");
+       if(serialBuffer.at(1) == 0x01){
+       qDebug("delete all rfid succes ");
+       }
+       else{
+           qDebug("delete all rfid false ");
+       }
+
+       }
 
         serialBuffer.clear();
 
