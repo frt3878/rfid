@@ -23,12 +23,3 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-<<<<<<< HEAD
-=======
-
-RESOURCES += \
-    logos.qrc
-
-DISTFILES += \
-    QTDark.stylesheet
->>>>>>> 952e648b5fe45b28a6c92c49961ffbc3fae02bcd
