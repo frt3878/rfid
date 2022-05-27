@@ -37,7 +37,7 @@ private slots:
 
 
 
-    void on_send_clicked();
+
 
 private:
     void serialRead();
