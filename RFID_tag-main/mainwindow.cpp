@@ -69,19 +69,25 @@ void MainWindow::Read_Data()
 
 void MainWindow::on_add_clicked()
 {
-
+    QString RFID =ui->rfiddata->toPlainText();
+    serialWrite(RFID);
+    qDebug()<<RFID;
 }
 
 
 void MainWindow::on_remove_clicked()
 {
-
+    QString RFID =ui->rfiddata->toPlainText();
+    serialWrite(RFID);
+    qDebug()<<RFID;
 }
 
 
 void MainWindow::on_allremove_clicked()
 {
-
+    QString RFID =ui->rfiddata->toPlainText();
+    serialWrite(RFID);
+    qDebug()<<RFID;
 }
 
 
@@ -168,10 +174,4 @@ void MainWindow::serialReadyRead()
     serialRead();
 }
 
-void MainWindow::on_send_clicked()
-{
-    QString RFID =ui->rfiddata->toPlainText();
-    serialWrite(RFID);
-    qDebug()<<RFID;
-}
 
