@@ -35,6 +35,7 @@ private slots:
 
     void on_disconnect_clicked();
 
+    void on_send_clicked();
 
 private:
     void serialRead();
