@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/p1">
+        <file>Logos/logo_mobil-1.png</file>
+        <file>Logos/rfid.png</file>
+    </qresource>
+</RCC>
