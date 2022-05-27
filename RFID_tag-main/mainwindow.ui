@@ -143,6 +143,7 @@
    <widget class="QPushButton" name="disconnect">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>200</x>
       <y>50</y>
       <width>211</width>
@@ -151,13 +152,99 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(186, 189, 182);</string>
+=======
+      <x>680</x>
+      <y>0</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/new/p1/Logos/logo_mobil-1.png);
+background-color: rgb(46, 52, 54);</string>
+>>>>>>> 952e648b5fe45b28a6c92c49961ffbc3fae02bcd
     </property>
     <property name="text">
      <string>Disconnect</string>
     </property>
+<<<<<<< HEAD
+=======
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>391</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QComboBox" name="comPortBox">
+       <property name="styleSheet">
+        <string notr="true">
+background-color: rgb(186, 189, 182);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="disconnect">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(186, 189, 182);</string>
+       </property>
+       <property name="text">
+        <string>Disconnect</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="connect">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(186, 189, 182);</string>
+       </property>
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="update">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(186, 189, 182);</string>
+       </property>
+       <property name="text">
+        <string>Update</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+>>>>>>> 952e648b5fe45b28a6c92c49961ffbc3fae02bcd
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>679</x>
+      <y>50</y>
+      <width>121</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/new/p1/Logos/rfid.png);
+background-color: rgb(115, 210, 22);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
