@@ -11,9 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    connect(serial1, &QSerialPort::readyRead,
-            this, &MainWindow::serialReadyRead);
+    connect(serial1, &QSerialPort::readyRead, this, &MainWindow::serialReadyRead);
 
 
 
@@ -137,41 +135,86 @@ void MainWindow::on_disconnect_clicked()
 
 }
 
-void MainWindow::serialWrite(QString message)
+void MainWindow::serialWrite(QByteArray message)
 {
-    QByteArray bytes1 = QByteArray::fromHex(message.toLocal8Bit());
-    qDebug()<<bytes1;
+
     if(serialDeviceIsConnected == true)
     {
-        serial1->write(bytes1); // Send the message to the device
+        serial1->write(message); // Send the message to the device
 
     }
 }
 
 
-void MainWindow::serialRead()
+
+ void MainWindow::serialRead()
 {
-    serial1->readyRead();
+
 
 
     if(serialDeviceIsConnected == true)
     {
-        serialBuffer += serial1->readAll(); // Read the available data
-        qDebug()<<"Gelen data : "<<serialBuffer;
+        serialBuffer.append(serial1->readAll());
+        qDebug()<<"Gelen data orjinal: "<<serialBuffer.toHex();
+
+
     }
+    if( serialBuffer.length() == 4 ){
+
+        serialBuffer.clear();
+
+    }
+
+
 }
-int sayac = 0;
+
 void MainWindow::serialReadyRead()
 {
-    sayac=sayac + 1;
-    qDebug()<<"Ready.r"<<sayac;
+
+
     serialRead();
 }
 
 void MainWindow::on_send_clicked()
 {
     QString RFID =ui->rfiddata->toPlainText();
-    serialWrite(RFID);
+    QByteArray bytes1 = QByteArray::fromHex(RFID.toLocal8Bit());
+    uint test;
+    test = CRC(bytes1,6);
+    QByteArray x;
+   // x.append(test>>8);
+    //x.append(test);
+
+    qDebug()<<"Hex convert"<<(x);
+   // bytes1.append(x.toHex());
+    qDebug()<<"crc = "<<test;
+    qDebug()<<"giden data  = "<<bytes1;
+    serialWrite(bytes1);
     qDebug()<<RFID;
 }
 
+uint MainWindow::CRC(QByteArray buf, int len)
+{
+
+  unsigned int temp, temp2, flag;
+  unsigned char i,j;
+
+  temp = 0xFFFF;
+  for (i = 0; i < len; i++)
+  {
+
+    temp = temp ^uchar(buf[i]) ;
+    for (j = 1; j <= 8; j++)
+    {
+      flag = temp & 0x0001;
+      temp >>= 1;
+      if (flag)
+        temp ^= 0xA001;
+    }
+  }
+  temp2 = temp >> 8;
+  temp = (temp << 8) | temp2;
+  temp &= 0xFFFF;
+  // Note, this number has low and high bytes swapped, so use it accordingly (or swap bytes)
+  return temp;
+}
