@@ -26,3 +26,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     logos.qrc
+
+DISTFILES += \
+    QTDark.stylesheet
