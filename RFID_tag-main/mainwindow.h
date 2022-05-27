@@ -29,7 +29,7 @@ private slots:
     void on_connect_clicked();
 
     void Read_Data();
-    void serialWrite(QString message);
+    void serialWrite(QByteArray message);
 
 
 
@@ -40,8 +40,9 @@ private slots:
 private:
     void serialRead();
     void serialReadyRead();
+    uint CRC(QByteArray buf, int len);
     Ui::MainWindow *ui;
-    QString serialBuffer;
+    QByteArray serialBuffer;
 
 
 };
